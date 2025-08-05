@@ -1,12 +1,46 @@
+# Source files (keep compiled out/ folder)
+src/**
+tsconfig.json
+*.ts
+
+# Development files
 .vscode/**
 .vscode-test/**
-src/**
 .gitignore
+.git/**
 .yarnrc
 vsc-extension-quickstart.md
-**/tsconfig.json
-**/.eslintrc.json
-**/*.map
-**/*.ts
+
+# Build and dependency files
 node_modules/**
+npm-debug.log*
+*.tsbuildinfo
+*.map
+**/.eslintrc.json
+
+# Documentation and examples (not needed in published package)
+WORKSPACE_SETUP.md
+WORKSPACE_EXAMPLE.md
+.terminal.example
+.terminal.example.json
+
+# Claude development files
+.claude/**
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/**
+tests/**
+**/*.test.js
+**/*.test.ts
+
+# Packaging files
 *.vsix
+
+# Extra icon files (keep only icon.png)
+icon-full.png
+icon-only.png

@@ -1,6 +1,6 @@
 {
   "name": "terminal-launcher",
-  "displayName": "Terminal Launcher",
+  "displayName": "Terminal Chef",
   "description": "Launch and manage multiple terminals from configuration files with colors, icons, and smart duplicate detection",
   "version": "1.0.0",
   "publisher": "Quixomatic",
