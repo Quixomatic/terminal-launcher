@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "groups": [
+    {
+      "name": "Full Stack Development",
+      "terminals": [
+        {
+          "name": "Backend",
+          "cwd": "./backend",
+          "commands": [
+            "nvm use 18",
+            "npm install",
+            "npm run dev"
+          ],
+          "commandDelay": 500,
+          "color": "blue",
+          "icon": "server"
+        },
+        {
+          "name": "Frontend",
+          "cwd": "./frontend",
+          "script": "./scripts/start-frontend.sh",
+          "color": "green",
+          "icon": "browser"
+        },
+        {
+          "name": "Database",
+          "cwd": "./",
+          "command": "docker-compose up db",
+          "color": "orange",
+          "icon": "database"
+        }
+      ]
+    }
+  ]
+}

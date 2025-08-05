@@ -1,0 +1,82 @@
+{
+  "name": "terminal-launcher",
+  "displayName": "Terminal Launcher",
+  "description": "Launch and manage multiple terminals from configuration files with colors, icons, and smart duplicate detection",
+  "version": "1.0.0",
+  "publisher": "Quixomatic",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Quixomatic/terminal-launcher"
+  },
+  "bugs": {
+    "url": "https://github.com/Quixomatic/terminal-launcher/issues"
+  },
+  "homepage": "https://github.com/Quixomatic/terminal-launcher#readme",
+  "keywords": [
+    "terminal",
+    "launcher",
+    "automation",
+    "development",
+    "productivity",
+    "multi-project",
+    "workspace",
+    "startup",
+    "configuration",
+    "dev-environment"
+  ],
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/.terminal",
+    "workspaceContains:**/.terminal.json",
+    "onCommand:terminalLauncher.launchTerminals"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "terminalLauncher.launchTerminals",
+        "title": "Terminal Launcher: Launch Terminals"
+      },
+      {
+        "command": "terminalLauncher.launchAllTerminals",
+        "title": "Terminal Launcher: Launch All Project Terminals"
+      },
+      {
+        "command": "terminalLauncher.initConfig",
+        "title": "Terminal Launcher: Initialize Configuration"
+      }
+    ],
+    "configuration": {
+      "title": "Terminal Launcher",
+      "properties": {
+        "terminalLauncher.configFileName": {
+          "type": "string",
+          "default": ".terminal",
+          "description": "Name of the configuration file to look for"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "build": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "@types/vscode": "^1.82.0",
+    "@vscode/vsce": "^3.6.0",
+    "esbuild": "^0.25.8",
+    "typescript": "^5.9.2"
+  }
+}

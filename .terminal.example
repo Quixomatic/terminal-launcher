@@ -1,0 +1,20 @@
+# Example Terminal Configuration File
+# This shows the simple format supported by the extension
+
+[Backend Server]
+cwd = ./backend
+commands = nvm use 18; npm install; npm run dev
+color = blue
+icon = server
+
+[Frontend App]
+cwd = ./frontend
+script = ./scripts/start-frontend.sh
+color = green
+icon = browser
+
+[Tests]
+cwd = ./
+command = npm test -- --watch
+color = yellow
+icon = beaker
